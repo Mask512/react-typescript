@@ -16,6 +16,7 @@ import { MutableRef } from './components/10.useRef/MutableRef';
 import CounterClass from './components/11.class-component/Class';
 import { Private } from './components/12.component-prop/auth/Private';
 import { Profile } from './components/12.component-prop/auth/Profile';
+import { List } from './components/13.generic-props';
 
 export default function App() {
   return (
@@ -81,7 +82,27 @@ export default function App() {
 
       {/* Component Prop */}
 
-      <Private isLoggedIn={true} component={Profile}/>
+      <Private isLoggedIn={true} component={Profile} />
+
+      {/* Generic Props */}
+      {/* <List
+        items={['Batman', 'Superman', 'Cyborg']}
+        onClick={(item) => console.log(item)}
+      />
+      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
+      <List
+        items={[
+          { id: 1,
+            first: 'Bruce',
+            last: 'Wayne',
+          },
+          { id: 2,
+            first: 'Clark',
+            last: 'Kent',
+          },
+        ]}
+        onClick={(item) => console.log(item)}
+      />
     </div>
   );
 }
