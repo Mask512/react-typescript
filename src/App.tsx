@@ -13,6 +13,9 @@ import Apps from './components/8.useContext';
 import Context from './components/9.useContext-future-value';
 import { DomRef } from './components/10.useRef/Domref';
 import { MutableRef } from './components/10.useRef/MutableRef';
+import CounterClass from './components/11.class-component/Class';
+import { Private } from './components/12.component-prop/auth/Private';
+import { Profile } from './components/12.component-prop/auth/Profile';
 
 export default function App() {
   return (
@@ -73,6 +76,12 @@ export default function App() {
       {/* useRef Mutable */}
       <MutableRef />
 
+      {/* Class Component */}
+      <CounterClass messages="This count : " />
+
+      {/* Component Prop */}
+
+      <Private isLoggedIn={true} component={Profile}/>
     </div>
   );
 }
