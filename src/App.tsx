@@ -19,6 +19,8 @@ import { Profile } from './components/12.component-prop/auth/Profile';
 import { List } from './components/13.generic-props';
 import { Toast } from './components/14.template-literals/Toast';
 import { CustomButton } from './components/15.wrapping-html/html/Button';
+import { CustomComponent } from './components/16.extracting-component-proptypes/CustomComponents';
+import { Text } from './components/17.Polymorphic-Component/Text';
 
 export default function App() {
   return (
@@ -94,24 +96,28 @@ export default function App() {
       <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
       <List
         items={[
-          { id: 1,
-            first: 'Bruce',
-            last: 'Wayne',
-          },
-          { id: 2,
-            first: 'Clark',
-            last: 'Kent',
-          },
+          { id: 1, first: 'Bruce', last: 'Wayne' },
+          { id: 2, first: 'Clark', last: 'Kent' },
         ]}
         onClick={(item) => console.log(item)}
       />
 
       {/* Template Literals */}
-      <Toast position='center - bottom' />
-      <Toast position='center' />
+      <Toast position="center - bottom" />
+      <Toast position="center" />
 
       {/* Wrapping HTML Elements */}
-      <CustomButton variant='primary'>Primary Button</CustomButton>
+      <CustomButton variant="primary">Primary Button</CustomButton>
+
+      {/* Extracting component types */}
+      <CustomComponent messagesCount={10} isLoggedIn name="User" />
+
+      {/* Polymorphic Components */}
+      <div>
+      <Text as='h1' size='lg'>Heading</Text>
+      <Text as='p' size='md'>Paragraph</Text>
+      <Text as='label' size='sm' color='secondary'>Label</Text>
+      </div>
     </div>
   );
 }
