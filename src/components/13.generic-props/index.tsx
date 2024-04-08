@@ -17,7 +17,7 @@ export const List = <T extends {id: number}>({ items, onClick }: ListProps<T>) =
       <h2>List of Items</h2>
       {items.map((item, index) => {
         return (
-          <span
+          <div
             key={index}
             style={{
               cursor: 'pointer',
@@ -28,7 +28,7 @@ export const List = <T extends {id: number}>({ items, onClick }: ListProps<T>) =
             onClick={() => onClick(item)}
           >
             {item.id}
-          </span>
+          </div>
         );
       })}
     </div>

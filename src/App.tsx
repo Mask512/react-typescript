@@ -17,6 +17,8 @@ import CounterClass from './components/11.class-component/Class';
 import { Private } from './components/12.component-prop/auth/Private';
 import { Profile } from './components/12.component-prop/auth/Profile';
 import { List } from './components/13.generic-props';
+import { Toast } from './components/14.template-literals/Toast';
+import { CustomButton } from './components/15.wrapping-html/html/Button';
 
 export default function App() {
   return (
@@ -103,6 +105,13 @@ export default function App() {
         ]}
         onClick={(item) => console.log(item)}
       />
+
+      {/* Template Literals */}
+      <Toast position='center - bottom' />
+      <Toast position='center' />
+
+      {/* Wrapping HTML Elements */}
+      <CustomButton variant='primary'>Primary Button</CustomButton>
     </div>
   );
 }
